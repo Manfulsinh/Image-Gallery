@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <!-- <div class="upload-section mb-4">
+        <label for="imageUploader" class="form-label">Choose an image</label>
+        <input type="file" class="form-control" id="imageUploader" (change)="onFileSelected($event)">
+        <button class="btn btn-primary mt-2" (click)="uploadImage()">Upload Image</button>
+    </div> -->
+
+    <div class="upload-section mb-4">
+        <label for="imageUploader" class="form-label">Choose an image</label>
+        <div class="uploader">
+            <input type="file" class="form-control" id="imageUploader" (change)="onFileSelected($event)">
+            <button class="btn btn-primary mt-2" (click)="uploadImage()">Upload Image</button>
+        </div>
+    </div>
+
+    <div class="gallery-section">
+        <div class="row">
+            <div *ngFor="let img of images; let i = index" class="col-md-4 mb-4 d-flex justify-content-center">
+                <div class="card all">
+                    <img [src]="img" alt="Uploaded Image" class="card-img-top">
+                    <button class="btn btn-danger" (click)="deleteImage(i)">Delete</button>
+                     
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
